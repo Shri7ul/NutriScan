@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- scan brackets, kept inside the 66dp adaptive-icon safe zone -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M36,36h9v3.5h-5.5V45H36V36z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M72,36v9h-3.5v-5.5H63V36H72z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M36,72v-9h3.5v5.5H45V72H36z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M63,72v-3.5h5.5V63H72v9H63z" />
+    <!-- barcode bars -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M44,45h3v18h-3z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M49,45h2v18h-2z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M53,45h3.4v18H53z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M58.4,45h2v18h-2z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M62,45h2.6v18H62z" />
+</vector>

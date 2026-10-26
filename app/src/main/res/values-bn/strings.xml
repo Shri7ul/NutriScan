@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_tagline">স্মার্ট স্ক্যান। সুস্থ খাবার।</string>
+
+    <!-- Home -->
+    <string name="home_subtitle">খাদ্যপণ্যের বারকোড স্ক্যান করে উপাদান, অ্যালার্জেন ও প্রতি ১০০ গ্রামে পুষ্টিমান দেখুন।</string>
+    <string name="action_scan_product">পণ্য স্ক্যান করুন</string>
+    <string name="action_enter_barcode">বারকোড হাতে লিখুন</string>
+    <string name="manual_entry_title">বারকোড ম্যানুয়ালি লিখুন</string>
+    <string name="manual_entry_hint">বারকোড (৮–১৪ সংখ্যা)</string>
+    <string name="manual_entry_invalid">৮ থেকে ১৪ সংখ্যার সঠিক বারকোড লিখুন।</string>
+    <string name="action_look_up">খুঁজুন</string>
+    <string name="action_cancel">বাতিল</string>
+    <string name="action_retry">আবার চেষ্টা করুন</string>
+    <string name="action_rescan">আবার স্ক্যান করুন</string>
+    <string name="action_back">ফিরে যান</string>
+    <string name="action_open_settings">সেটিংস খুলুন</string>
+    <string name="recent_scans_title">সাম্প্রতিক স্ক্যান</string>
+    <string name="recent_scans_empty">এখনও কোনো স্ক্যান করা হয়নি। আপনি যে পণ্য স্ক্যান করবেন তা এখানে দেখা যাবে।</string>
+    <string name="recent_scans_clear">ইতিহাস মুছুন</string>
+    <string name="language_english">English</string>
+    <string name="language_bangla">বাংলা</string>
+
+    <!-- Scanner -->
+    <string name="scanner_title">বারকোড স্ক্যান করুন</string>
+    <string name="scanner_hint">প্যাকেটের বারকোডের দিকে ক্যামেরা ধরুন</string>
+    <string name="scanner_torch_on">টর্চ বন্ধ করুন</string>
+    <string name="scanner_torch_off">টর্চ চালু করুন</string>
+    <string name="scanner_manual_fallback">বারকোড হাতে লিখুন</string>
+    <string name="camera_permission_title">ক্যামেরার অনুমতি প্রয়োজন</string>
+    <string name="camera_permission_body">পণ্যের বারকোড পড়তে NutriScan-এর ক্যামেরা দরকার। শুধু বারকোড নম্বরটি Open Food Facts-এ পাঠানো হয়।</string>
+    <string name="camera_permission_denied_permanently">ক্যামেরা ব্যবহার বন্ধ আছে। স্ক্যান করতে সিস্টেম সেটিংসে চালু করুন।</string>
+    <string name="camera_permission_grant">ক্যামেরার অনুমতি দিন</string>
+    <string name="camera_start_failed">ক্যামেরা চালু করা যায়নি। আবার চেষ্টা করুন বা বারকোড হাতে লিখুন।</string>
+
+    <!-- Product details -->
+    <string name="details_title">পণ্য</string>
+    <string name="details_barcode">বারকোড</string>
+    <string name="details_brand">ব্র্যান্ড</string>
+    <string name="details_categories">শ্রেণি</string>
+    <string name="details_ingredients">উপাদান</string>
+    <string name="details_allergens">অ্যালার্জেন</string>
+    <string name="details_nutrition">পুষ্টিমান</string>
+    <string name="details_serving_size">পরিবেশন আকার</string>
+    <string name="details_quantity">নেট পরিমাণ</string>
+    <string name="details_no_allergens">এই পণ্যে কোনো অ্যালার্জেন উল্লেখ নেই</string>
+    <string name="details_missing_value">পাওয়া যায়নি</string>
+    <string name="details_no_nutrition">এই পণ্যের পুষ্টিমান পাওয়া যায়নি।</string>
+    <string name="details_no_ingredients">এই পণ্যের উপাদানের তালিকা পাওয়া যায়নি।</string>
+    <string name="details_no_name">নামহীন পণ্য</string>
+    <string name="details_image_missing">পণ্যের ছবি নেই</string>
+    <string name="details_source_note">তথ্য Open Food Facts থেকে নেওয়া, যা কমিউনিটি যোগ করে। তথ্য অসম্পূর্ণ বা পুরোনো হতে পারে।</string>
+    <string name="nutrition_per_100g">প্রতি ১০০ গ্রাম</string>
+    <string name="nutrition_per_100ml">প্রতি ১০০ মিলি</string>
+    <string name="nutrient_energy">শক্তি</string>
+    <string name="nutrient_fat">চর্বি</string>
+    <string name="nutrient_saturated_fat">সম্পৃক্ত চর্বি</string>
+    <string name="nutrient_carbohydrates">কার্বোহাইড্রেট</string>
+    <string name="nutrient_sugars">চিনি</string>
+    <string name="nutrient_protein">প্রোটিন</string>
+    <string name="nutrient_salt">লবণ</string>
+    <string name="nutrient_fiber">আঁশ</string>
+    <string name="nutrient_sodium">সোডিয়াম</string>
+
+    <!-- Errors -->
+    <string name="loading">লোড হচ্ছে…</string>
+    <string name="error_not_found_title">পণ্যটি পাওয়া যায়নি</string>
+    <string name="error_not_found_body">বারকোড %1$s এখনও Open Food Facts ডেটাবেসে নেই। অন্য পণ্য স্ক্যান করে দেখুন।</string>
+    <string name="error_offline_title">ইন্টারনেট সংযোগ নেই</string>
+    <string name="error_offline_body">সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="error_timeout_title">সময় শেষ হয়েছে</string>
+    <string name="error_timeout_body">Open Food Facts সময়মতো উত্তর দেয়নি। আবার চেষ্টা করুন।</string>
+    <string name="error_rate_limited_title">অনুরোধ বেশি হয়ে গেছে</string>
+    <string name="error_rate_limited_body">Open Food Facts এখন অনুরোধ সীমিত করছে। কিছুক্ষণ অপেক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="error_server_title">সার্ভার ত্রুটি</string>
+    <string name="error_server_body">Open Food Facts একটি ত্রুটি দিয়েছে (HTTP %1$d)। পরে আবার চেষ্টা করুন।</string>
+    <string name="error_malformed_title">অপ্রত্যাশিত উত্তর</string>
+    <string name="error_malformed_body">পণ্যের তথ্য পড়া যায়নি। পরে আবার চেষ্টা করুন।</string>
+    <string name="error_unknown_title">কিছু একটা ভুল হয়েছে</string>
+    <string name="error_unknown_body">পণ্যটি লোড করা যায়নি। আবার চেষ্টা করুন।</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_app_logo">NutriScan লোগো</string>
+    <string name="cd_product_image">পণ্যের ছবি</string>
+    <string name="cd_recent_scan">পণ্যের বিবরণ খুলুন</string>
+</resources>

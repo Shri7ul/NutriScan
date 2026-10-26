@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Recent scans are re-fetchable; nothing sensitive is stored, so keep backups minimal. -->
+    <exclude domain="sharedpref" path="nutriscan_recent_scans.xml" />
+</full-backup-content>

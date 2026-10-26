@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">NutriScan</string>
+    <string name="app_tagline">Scan Smart. Eat Better.</string>
+
+    <!-- Home -->
+    <string name="home_subtitle">Scan a packaged food barcode to see ingredients, allergens and nutrition per 100 g.</string>
+    <string name="action_scan_product">Scan Product</string>
+    <string name="action_enter_barcode">Enter barcode manually</string>
+    <string name="manual_entry_title">Manual barcode entry</string>
+    <string name="manual_entry_hint">Barcode (8–14 digits)</string>
+    <string name="manual_entry_invalid">Enter a valid barcode containing 8 to 14 digits.</string>
+    <string name="action_look_up">Look up</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_rescan">Scan again</string>
+    <string name="action_back">Back</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="recent_scans_title">Recent scans</string>
+    <string name="recent_scans_empty">No scans yet. Products you scan or look up will appear here.</string>
+    <string name="recent_scans_clear">Clear history</string>
+    <string name="language_english">English</string>
+    <string name="language_bangla">বাংলা</string>
+
+    <!-- Scanner -->
+    <string name="scanner_title">Scan barcode</string>
+    <string name="scanner_hint">Point the camera at the barcode on the package</string>
+    <string name="scanner_torch_on">Turn torch off</string>
+    <string name="scanner_torch_off">Turn torch on</string>
+    <string name="scanner_manual_fallback">Enter barcode manually</string>
+    <string name="camera_permission_title">Camera permission needed</string>
+    <string name="camera_permission_body">NutriScan needs the camera to read product barcodes. Only the barcode number is sent to Open Food Facts.</string>
+    <string name="camera_permission_denied_permanently">Camera access is blocked. Enable it in system settings to scan barcodes.</string>
+    <string name="camera_permission_grant">Allow camera</string>
+    <string name="camera_start_failed">Could not start the camera. Try again or enter the barcode manually.</string>
+
+    <!-- Product details -->
+    <string name="details_title">Product</string>
+    <string name="details_barcode">Barcode</string>
+    <string name="details_brand">Brand</string>
+    <string name="details_categories">Categories</string>
+    <string name="details_ingredients">Ingredients</string>
+    <string name="details_allergens">Allergens</string>
+    <string name="details_nutrition">Nutrition</string>
+    <string name="details_serving_size">Serving size</string>
+    <string name="details_quantity">Net quantity</string>
+    <string name="details_no_allergens">No allergens listed for this product</string>
+    <string name="details_missing_value">Not available</string>
+    <string name="details_no_nutrition">No nutrition data available for this product.</string>
+    <string name="details_no_ingredients">No ingredient list available for this product.</string>
+    <string name="details_no_name">Unnamed product</string>
+    <string name="details_image_missing">No product image</string>
+    <string name="details_source_note">Data from Open Food Facts, contributed by the community. Values may be incomplete or out of date.</string>
+    <string name="nutrition_per_100g">per 100 g</string>
+    <string name="nutrition_per_100ml">per 100 ml</string>
+    <string name="nutrient_energy">Energy</string>
+    <string name="nutrient_fat">Fat</string>
+    <string name="nutrient_saturated_fat">Saturated fat</string>
+    <string name="nutrient_carbohydrates">Carbohydrates</string>
+    <string name="nutrient_sugars">Sugars</string>
+    <string name="nutrient_protein">Protein</string>
+    <string name="nutrient_salt">Salt</string>
+    <string name="nutrient_fiber">Fiber</string>
+    <string name="nutrient_sodium">Sodium</string>
+
+    <!-- Errors -->
+    <string name="loading">Loading…</string>
+    <string name="error_not_found_title">Product not found</string>
+    <string name="error_not_found_body">Barcode %1$s is not in the Open Food Facts database yet. Try scanning another product.</string>
+    <string name="error_offline_title">No internet connection</string>
+    <string name="error_offline_body">Check your connection and try again.</string>
+    <string name="error_timeout_title">Request timed out</string>
+    <string name="error_timeout_body">Open Food Facts took too long to respond. Try again.</string>
+    <string name="error_rate_limited_title">Too many requests</string>
+    <string name="error_rate_limited_body">Open Food Facts is limiting requests right now. Wait a moment and try again.</string>
+    <string name="error_server_title">Server error</string>
+    <string name="error_server_body">Open Food Facts returned an error (HTTP %1$d). Try again later.</string>
+    <string name="error_malformed_title">Unexpected response</string>
+    <string name="error_malformed_body">The product data could not be read. Try again later.</string>
+    <string name="error_unknown_title">Something went wrong</string>
+    <string name="error_unknown_body">The product could not be loaded. Try again.</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_app_logo">NutriScan logo</string>
+    <string name="cd_product_image">Product photo</string>
+    <string name="cd_recent_scan">Open product details</string>
+</resources>
