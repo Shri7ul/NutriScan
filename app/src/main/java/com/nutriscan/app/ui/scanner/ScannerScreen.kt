@@ -70,6 +70,8 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.nutriscan.app.R
 import com.nutriscan.app.scanner.BarcodeAnalyzer
 import com.nutriscan.app.ui.components.ManualBarcodeDialog
+import com.nutriscan.app.ui.components.barcodeRejectionMessage
+import com.nutriscan.app.util.BarcodeValidator
 import java.util.concurrent.Executors
 
 private enum class CameraPermissionState { GRANTED, NOT_GRANTED, PERMANENTLY_DENIED }
@@ -169,11 +171,23 @@ private fun CameraScannerContent(
     var torchOn by remember { mutableStateOf(false) }
     var camera by remember { mutableStateOf<Camera?>(null) }
     var cameraFailed by remember { mutableStateOf(false) }
+    var rejection by remember { mutableStateOf<BarcodeValidator.Rejection?>(null) }
+
+    // A detected-but-invalid code gets a short explanation, then the hint returns.
+    LaunchedEffect(rejection) {
+        if (rejection != null) {
+            kotlinx.coroutines.delay(3_000)
+            rejection = null
+        }
+    }
 
     DisposableEffect(lifecycleOwner, previewView) {
         val providerFuture = ProcessCameraProvider.getInstance(context)
         val analysisExecutor = Executors.newSingleThreadExecutor()
-        val analyzer = BarcodeAnalyzer { barcode -> onDetectedState.value(barcode) }
+        val analyzer = BarcodeAnalyzer(
+            onBarcodeDetected = { barcode -> onDetectedState.value(barcode) },
+            onInvalidBarcode = { problem -> rejection = problem }
+        )
         var boundProvider: ProcessCameraProvider? = null
 
         providerFuture.addListener(
@@ -277,6 +291,16 @@ private fun CameraScannerContent(
             if (cameraFailed) {
                 Text(
                     text = stringResource(R.string.camera_start_failed),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color(0xFFFFB4AB),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(Modifier.height(4.dp))
+            }
+            val currentRejection = rejection
+            if (currentRejection != null) {
+                Text(
+                    text = barcodeRejectionMessage(currentRejection),
                     style = MaterialTheme.typography.bodyMedium,
                     color = Color(0xFFFFB4AB),
                     textAlign = TextAlign.Center

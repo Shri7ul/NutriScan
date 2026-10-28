@@ -1,0 +1,14 @@
+{
+  "code": "012345000065",
+  "status": "success_with_warnings",
+  "errors": [],
+  "product": {
+    "_id": "012345000065",
+    "product_type": "food",
+    "product_name": "Plain Rice Cakes",
+    "brands": "Example Mills",
+    "nutrition_data_per": "100g",
+    "last_modified_t": 1750000000,
+    "states_tags": ["en:to-be-completed"]
+  }
+}

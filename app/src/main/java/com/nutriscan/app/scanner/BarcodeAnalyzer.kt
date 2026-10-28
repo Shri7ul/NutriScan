@@ -14,14 +14,17 @@ import com.nutriscan.app.util.BarcodeValidator
  * CameraX analyzer backed by the bundled ML Kit barcode model (no Play Services download,
  * works offline right after install).
  *
- * Frame handling rules:
- *  - only EAN-13, EAN-8, UPC-A and UPC-E are requested from ML Kit;
+ * Only the four product symbologies are requested, so QR / Data Matrix / Code-128 codes are never
+ * decoded and are never claimed as supported. Frame handling rules:
+ *  - a value that is not a well formed GTIN is reported through [onInvalidBarcode] instead of being
+ *    silently cleaned into a fake code;
  *  - the same code seen twice inside [DEBOUNCE_WINDOW_MS] is dropped;
  *  - after a successful detection the analyzer pauses itself, so no further frames are decoded
  *    until the screen calls [resume] (or a fresh analyzer is created).
  */
 class BarcodeAnalyzer(
-    private val onBarcodeDetected: (String) -> Unit
+    private val onBarcodeDetected: (String) -> Unit,
+    private val onInvalidBarcode: (BarcodeValidator.Rejection) -> Unit = {}
 ) : ImageAnalysis.Analyzer {
 
     private val scanner = BarcodeScanning.getClient(
@@ -38,6 +41,7 @@ class BarcodeAnalyzer(
     private val lock = Any()
     private var lastValue: String? = null
     private var lastDetectedAt = 0L
+    private var lastRejectedAt = 0L
 
     @Volatile
     private var paused = false
@@ -66,9 +70,14 @@ class BarcodeAnalyzer(
         if (paused) return
 
         for (barcode in barcodes) {
-            val normalized = BarcodeValidator.normalize(barcode.rawValue.orEmpty())
-            if (!BarcodeValidator.isValid(normalized)) continue
+            val raw = barcode.rawValue.orEmpty()
+            val rejection = BarcodeValidator.inspect(raw)
+            if (rejection != BarcodeValidator.Rejection.OK) {
+                reportRejected(rejection)
+                continue
+            }
 
+            val normalized = BarcodeValidator.sanitize(raw) ?: continue
             val now = SystemClock.elapsedRealtime()
             synchronized(lock) {
                 if (normalized == lastValue && now - lastDetectedAt < DEBOUNCE_WINDOW_MS) return
@@ -82,6 +91,16 @@ class BarcodeAnalyzer(
         }
     }
 
+    /** Rate limits the "this is not a product barcode" message so it cannot spam the UI. */
+    private fun reportRejected(rejection: BarcodeValidator.Rejection) {
+        val now = SystemClock.elapsedRealtime()
+        synchronized(lock) {
+            if (now - lastRejectedAt < REJECTION_COOLDOWN_MS) return
+            lastRejectedAt = now
+        }
+        onInvalidBarcode(rejection)
+    }
+
     /** Stops decoding while the app navigates away from the scanner. */
     fun pause() {
         paused = true
@@ -92,6 +111,7 @@ class BarcodeAnalyzer(
         synchronized(lock) {
             lastValue = null
             lastDetectedAt = 0L
+            lastRejectedAt = 0L
         }
         paused = false
     }
@@ -103,5 +123,6 @@ class BarcodeAnalyzer(
 
     private companion object {
         const val DEBOUNCE_WINDOW_MS = 1_200L
+        const val REJECTION_COOLDOWN_MS = 2_500L
     }
 }

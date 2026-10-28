@@ -7,6 +7,9 @@
     <string name="home_subtitle">Scan a packaged food barcode to see ingredients, allergens and nutrition per 100 g.</string>
     <string name="action_scan_product">Scan Product</string>
     <string name="action_enter_barcode">Enter barcode manually</string>
+    <string name="action_search_product">Search by name or brand</string>
+    <string name="action_search_short">Search</string>
+    <string name="action_add_product">Add product details</string>
     <string name="manual_entry_title">Manual barcode entry</string>
     <string name="manual_entry_hint">Barcode (8–14 digits)</string>
     <string name="manual_entry_invalid">Enter a valid barcode containing 8 to 14 digits.</string>
@@ -39,8 +42,10 @@
     <string name="details_barcode">Barcode</string>
     <string name="details_brand">Brand</string>
     <string name="details_categories">Categories</string>
+    <string name="details_labels">Labels</string>
     <string name="details_ingredients">Ingredients</string>
     <string name="details_allergens">Allergens</string>
+    <string name="details_traces">May contain (traces)</string>
     <string name="details_nutrition">Nutrition</string>
     <string name="details_serving_size">Serving size</string>
     <string name="details_quantity">Net quantity</string>
@@ -51,34 +56,136 @@
     <string name="details_no_name">Unnamed product</string>
     <string name="details_image_missing">No product image</string>
     <string name="details_source_note">Data from Open Food Facts, contributed by the community. Values may be incomplete or out of date.</string>
+    <string name="details_nutrition_not_applicable">This is not a food product, so nutrition data does not apply.</string>
+    <string name="details_allergens_not_applicable">This is not a food product, so allergen data does not apply.</string>
+    <string name="details_ingredient_count">%1$d ingredients parsed by the source</string>
+    <string name="details_nutriscore">Nutri-Score</string>
+    <string name="details_nova">NOVA</string>
+    <string name="details_score_source">Scores are calculated by Open Food Facts, not by NutriScan.</string>
+    <string name="details_nutriscore_unavailable">Nutri-Score is not published for this product.</string>
+    <string name="details_derived">calculated from another reported value</string>
+    <string name="details_source_title">Source and freshness</string>
+    <string name="details_source_label">Source</string>
+    <string name="details_source_off">Open Food Facts</string>
+    <string name="details_source_user">Entered by you</string>
+    <string name="details_last_modified">Last edited</string>
+    <string name="details_off_completeness">Source completeness</string>
+    <string name="details_cached_banner">Showing a saved copy from %1$s. It may be out of date.</string>
+    <string name="details_cached_banner_unknown_date">Showing a saved copy. It may be out of date.</string>
+    <string name="details_offline_banner">No connection. Showing the copy saved on this device.</string>
+    <string name="details_incomplete_banner">Found, but the record is incomplete: %1$d of %2$d information groups present.</string>
+    <string name="details_user_entry_banner">These details are your own entry. No database has this barcode.</string>
+    <string name="details_user_entry_incomplete_banner">Your entry covers %1$d of %2$d information groups.</string>
+    <string name="details_conflict_banner">Some of your entries differ from the database. The database values are shown.</string>
+    <string name="details_non_food">Open Food Facts classifies this as a %1$s product, not a food product.</string>
+    <string name="details_your_photo">Your package photo</string>
+    <string name="details_edit_entry">Edit my entry</string>
     <string name="nutrition_per_100g">per 100 g</string>
     <string name="nutrition_per_100ml">per 100 ml</string>
     <string name="nutrient_energy">Energy</string>
+    <string name="nutrient_energy_kj">Energy (kJ)</string>
     <string name="nutrient_fat">Fat</string>
     <string name="nutrient_saturated_fat">Saturated fat</string>
     <string name="nutrient_carbohydrates">Carbohydrates</string>
-    <string name="nutrient_sugars">Sugars</string>
+    <string name="nutrient_sugars">Sugars (total)</string>
+    <string name="nutrient_added_sugars">Added sugars</string>
     <string name="nutrient_protein">Protein</string>
     <string name="nutrient_salt">Salt</string>
-    <string name="nutrient_fiber">Fiber</string>
+    <string name="nutrient_fiber">Fibre</string>
     <string name="nutrient_sodium">Sodium</string>
+
+    <!-- Product type -->
+    <string name="product_type_food">Food product</string>
+    <string name="product_type_beauty">Beauty product</string>
+    <string name="product_type_pet_food">Pet food</string>
+    <string name="product_type_other">Other product</string>
+    <string name="product_type_unknown">Product type not stated</string>
+
+    <!-- Field states -->
+    <string name="status_available">Available</string>
+    <string name="status_missing">Missing</string>
+    <string name="status_unverified">Unverified</string>
+    <string name="status_not_applicable">Not applicable</string>
+    <string name="status_user_entered">Your entry</string>
+    <string name="note_read_from_label">Read from the package label</string>
+    <string name="note_typed_by_user">Typed by you, not verified</string>
+    <string name="note_source_incomplete">The source marks this section as incomplete</string>
+    <string name="note_only_traces">Only “may contain” traces are recorded</string>
+    <string name="note_record_outdated">The record has not been edited in over a year</string>
+
+    <!-- Completeness -->
+    <string name="completeness_title">Information coverage</string>
+    <string name="completeness_summary">%1$d%% — %2$d of %3$d groups available</string>
+    <string name="completeness_note">The figure is the mean of the eight groups above, weighted equally. Groups that do not apply to this product are excluded.</string>
+    <string name="group_identification">Identification</string>
+    <string name="group_name_brand">Name and brand</string>
+    <string name="group_ingredients">Ingredients</string>
+    <string name="group_nutrition">Nutrition</string>
+    <string name="group_allergens">Allergens</string>
+    <string name="group_image">Image</string>
+    <string name="group_serving_size">Serving size</string>
+    <string name="group_data_freshness">Data freshness</string>
+
+    <!-- Search -->
+    <string name="search_title">Search products</string>
+    <string name="search_hint">Product name or brand</string>
+    <string name="search_action">Search</string>
+    <string name="search_rate_note">Search runs only when you press Search: the public database allows 10 searches per minute.</string>
+    <string name="search_idle_title">Find a product by name</string>
+    <string name="search_idle_body">Search Open Food Facts by product name or brand, then open a result to see its full record.</string>
+    <string name="search_empty_title">No matches</string>
+    <string name="search_empty_body">Nothing matched that name. Try a shorter or differently spelled query.</string>
+    <string name="search_result_count">%1$d matching products</string>
+
+    <!-- Manual product entry -->
+    <string name="manual_title">Add product details</string>
+    <string name="manual_intro">No database had this barcode. You can record what the package says; it stays on this device and is shown next to any data that arrives later.</string>
+    <string name="manual_photo_title">Package photo</string>
+    <string name="manual_photo_hint">Photograph the label so you can check the values later. The photo stays on this device.</string>
+    <string name="manual_take_photo">Take photo</string>
+    <string name="manual_photo_error">The camera could not be opened. You can still type the values from the label.</string>
+    <string name="manual_retake_photo">Retake photo</string>
+    <string name="manual_remove_photo">Remove</string>
+    <string name="manual_read_from_label">Values read from the package label</string>
+    <string name="manual_read_from_label_hint">Turn this off if you typed them from memory.</string>
+    <string name="manual_name">Product name</string>
+    <string name="manual_brand">Brand</string>
+    <string name="manual_quantity">Net quantity (for example 400 g)</string>
+    <string name="manual_serving_size">Serving size (for example 30 g)</string>
+    <string name="manual_ingredients">Ingredients</string>
+    <string name="manual_allergens">Allergens</string>
+    <string name="manual_allergens_hint">Separate with commas</string>
+    <string name="manual_nutrition_title">Nutrition per 100 g</string>
+    <string name="manual_error_empty">Enter at least one value before saving.</string>
+    <string name="manual_error_invalid_number">Nutrition values must be numbers, or left empty.</string>
+    <string name="manual_error_save">The entry could not be saved on this device.</string>
+    <string name="manual_save">Save on this device</string>
+    <string name="manual_delete">Delete my entry</string>
+    <string name="manual_privacy_note">Nothing you type here is uploaded. NutriScan does not publish to public databases.</string>
 
     <!-- Errors -->
     <string name="loading">Loading…</string>
     <string name="error_not_found_title">Product not found</string>
-    <string name="error_not_found_body">Barcode %1$s is not in the Open Food Facts database yet. Try scanning another product.</string>
+    <string name="error_not_found_body">Barcode %1$s is not in any Open Food Facts database. You can add what the package says, or search by name.</string>
     <string name="error_offline_title">No internet connection</string>
     <string name="error_offline_body">Check your connection and try again.</string>
     <string name="error_timeout_title">Request timed out</string>
     <string name="error_timeout_body">Open Food Facts took too long to respond. Try again.</string>
     <string name="error_rate_limited_title">Too many requests</string>
     <string name="error_rate_limited_body">Open Food Facts is limiting requests right now. Wait a moment and try again.</string>
-    <string name="error_server_title">Server error</string>
+    <string name="error_server_title">Service temporarily unavailable</string>
     <string name="error_server_body">Open Food Facts returned an error (HTTP %1$d). Try again later.</string>
     <string name="error_malformed_title">Unexpected response</string>
     <string name="error_malformed_body">The product data could not be read. Try again later.</string>
     <string name="error_unknown_title">Something went wrong</string>
     <string name="error_unknown_body">The product could not be loaded. Try again.</string>
+    <string name="error_invalid_barcode_title">Not a product barcode</string>
+    <string name="error_barcode_empty">Enter a barcode.</string>
+    <string name="error_barcode_non_numeric">A product barcode contains digits only. QR codes and other codes are not supported.</string>
+    <string name="error_barcode_too_short">This barcode is too short. EAN-8, UPC-A, UPC-E and EAN-13 codes have 8, 12 or 13 digits.</string>
+    <string name="error_barcode_too_long">This barcode is too long. NutriScan reads codes of up to 14 digits.</string>
+    <string name="error_barcode_unsupported_length">NutriScan supports 8, 12, 13 and 14 digit product barcodes. This one has another length.</string>
+    <string name="error_barcode_bad_check_digit">The check digit does not match, so this is probably a misread or a typo.</string>
 
     <!-- Content descriptions -->
     <string name="cd_app_logo">NutriScan logo</string>

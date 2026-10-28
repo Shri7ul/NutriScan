@@ -6,6 +6,9 @@
     <string name="home_subtitle">খাদ্যপণ্যের বারকোড স্ক্যান করে উপাদান, অ্যালার্জেন ও প্রতি ১০০ গ্রামে পুষ্টিমান দেখুন।</string>
     <string name="action_scan_product">পণ্য স্ক্যান করুন</string>
     <string name="action_enter_barcode">বারকোড হাতে লিখুন</string>
+    <string name="action_search_product">নাম বা ব্র্যান্ড দিয়ে খুঁজুন</string>
+    <string name="action_search_short">খুঁজুন</string>
+    <string name="action_add_product">পণ্যের তথ্য যোগ করুন</string>
     <string name="manual_entry_title">বারকোড ম্যানুয়ালি লিখুন</string>
     <string name="manual_entry_hint">বারকোড (৮–১৪ সংখ্যা)</string>
     <string name="manual_entry_invalid">৮ থেকে ১৪ সংখ্যার সঠিক বারকোড লিখুন।</string>
@@ -38,8 +41,10 @@
     <string name="details_barcode">বারকোড</string>
     <string name="details_brand">ব্র্যান্ড</string>
     <string name="details_categories">শ্রেণি</string>
+    <string name="details_labels">লেবেল</string>
     <string name="details_ingredients">উপাদান</string>
     <string name="details_allergens">অ্যালার্জেন</string>
+    <string name="details_traces">থাকতে পারে (ট্রেস)</string>
     <string name="details_nutrition">পুষ্টিমান</string>
     <string name="details_serving_size">পরিবেশন আকার</string>
     <string name="details_quantity">নেট পরিমাণ</string>
@@ -50,34 +55,136 @@
     <string name="details_no_name">নামহীন পণ্য</string>
     <string name="details_image_missing">পণ্যের ছবি নেই</string>
     <string name="details_source_note">তথ্য Open Food Facts থেকে নেওয়া, যা কমিউনিটি যোগ করে। তথ্য অসম্পূর্ণ বা পুরোনো হতে পারে।</string>
+    <string name="details_nutrition_not_applicable">এটি খাদ্যপণ্য নয়, তাই পুষ্টিমান প্রযোজ্য নয়।</string>
+    <string name="details_allergens_not_applicable">এটি খাদ্যপণ্য নয়, তাই অ্যালার্জেন তথ্য প্রযোজ্য নয়।</string>
+    <string name="details_ingredient_count">উৎস %1$dটি উপাদান চিহ্নিত করেছে</string>
+    <string name="details_nutriscore">নিউট্রি-স্কোর</string>
+    <string name="details_nova">NOVA</string>
+    <string name="details_score_source">স্কোর Open Food Facts হিসাব করে, NutriScan নয়।</string>
+    <string name="details_nutriscore_unavailable">এই পণ্যের জন্য নিউট্রি-স্কোর প্রকাশ করা হয়নি।</string>
+    <string name="details_derived">অন্য একটি মান থেকে হিসাব করা</string>
+    <string name="details_source_title">উৎস ও সতেজতা</string>
+    <string name="details_source_label">উৎস</string>
+    <string name="details_source_off">Open Food Facts</string>
+    <string name="details_source_user">আপনি লিখেছেন</string>
+    <string name="details_last_modified">শেষ সম্পাদনা</string>
+    <string name="details_off_completeness">উৎসের সম্পূর্ণতা</string>
+    <string name="details_cached_banner">%1$s তারিখের সংরক্ষিত কপি দেখানো হচ্ছে। এটি পুরোনো হতে পারে।</string>
+    <string name="details_cached_banner_unknown_date">সংরক্ষিত কপি দেখানো হচ্ছে। এটি পুরোনো হতে পারে।</string>
+    <string name="details_offline_banner">সংযোগ নেই। এই ডিভাইসে সংরক্ষিত কপি দেখানো হচ্ছে।</string>
+    <string name="details_incomplete_banner">পণ্যটি পাওয়া গেছে, তবে তথ্য অসম্পূর্ণ: %2$dটি গোষ্ঠীর মধ্যে %1$dটি আছে।</string>
+    <string name="details_user_entry_banner">এই তথ্যগুলো আপনার নিজের লেখা। এই বারকোড কোনো ডেটাবেসে নেই।</string>
+    <string name="details_user_entry_incomplete_banner">আপনার লেখায় %2$dটি গোষ্ঠীর মধ্যে %1$dটি তথ্য আছে।</string>
+    <string name="details_conflict_banner">আপনার কিছু তথ্য ডেটাবেসের সাথে মিলছে না। ডেটাবেসের মান দেখানো হচ্ছে।</string>
+    <string name="details_non_food">Open Food Facts এটিকে %1$s হিসেবে চিহ্নিত করেছে, খাদ্যপণ্য হিসেবে নয়।</string>
+    <string name="details_your_photo">আপনার তোলা প্যাকেটের ছবি</string>
+    <string name="details_edit_entry">আমার তথ্য সম্পাদনা করুন</string>
     <string name="nutrition_per_100g">প্রতি ১০০ গ্রাম</string>
     <string name="nutrition_per_100ml">প্রতি ১০০ মিলি</string>
     <string name="nutrient_energy">শক্তি</string>
+    <string name="nutrient_energy_kj">শক্তি (কিলোজুল)</string>
     <string name="nutrient_fat">চর্বি</string>
     <string name="nutrient_saturated_fat">সম্পৃক্ত চর্বি</string>
     <string name="nutrient_carbohydrates">কার্বোহাইড্রেট</string>
-    <string name="nutrient_sugars">চিনি</string>
+    <string name="nutrient_sugars">চিনি (মোট)</string>
+    <string name="nutrient_added_sugars">যোগ করা চিনি</string>
     <string name="nutrient_protein">প্রোটিন</string>
     <string name="nutrient_salt">লবণ</string>
     <string name="nutrient_fiber">আঁশ</string>
     <string name="nutrient_sodium">সোডিয়াম</string>
 
+    <!-- Product type -->
+    <string name="product_type_food">খাদ্যপণ্য</string>
+    <string name="product_type_beauty">সৌন্দর্য পণ্য</string>
+    <string name="product_type_pet_food">পোষা প্রাণীর খাবার</string>
+    <string name="product_type_other">অন্যান্য পণ্য</string>
+    <string name="product_type_unknown">পণ্যের ধরন উল্লেখ নেই</string>
+
+    <!-- Field states -->
+    <string name="status_available">আছে</string>
+    <string name="status_missing">নেই</string>
+    <string name="status_unverified">যাচাই হয়নি</string>
+    <string name="status_not_applicable">প্রযোজ্য নয়</string>
+    <string name="status_user_entered">আপনার তথ্য</string>
+    <string name="note_read_from_label">প্যাকেটের লেবেল থেকে নেওয়া</string>
+    <string name="note_typed_by_user">আপনি লিখেছেন, যাচাই হয়নি</string>
+    <string name="note_source_incomplete">উৎস এই অংশটি অসম্পূর্ণ বলেছে</string>
+    <string name="note_only_traces">শুধু ‘থাকতে পারে’ ট্রেস লিপিবদ্ধ আছে</string>
+    <string name="note_record_outdated">এক বছরের বেশি সময় ধরে রেকর্ডটি সম্পাদিত হয়নি</string>
+
+    <!-- Completeness -->
+    <string name="completeness_title">তথ্যের পরিপূর্ণতা</string>
+    <string name="completeness_summary">%1$d%% — %3$dটি গোষ্ঠীর মধ্যে %2$dটি আছে</string>
+    <string name="completeness_note">সংখ্যাটি উপরের আটটি গোষ্ঠীর সমান ওজনের গড়। এই পণ্যে প্রযোজ্য নয় এমন গোষ্ঠী বাদ দেওয়া হয়েছে।</string>
+    <string name="group_identification">শনাক্তকরণ</string>
+    <string name="group_name_brand">নাম ও ব্র্যান্ড</string>
+    <string name="group_ingredients">উপাদান</string>
+    <string name="group_nutrition">পুষ্টিমান</string>
+    <string name="group_allergens">অ্যালার্জেন</string>
+    <string name="group_image">ছবি</string>
+    <string name="group_serving_size">পরিবেশন আকার</string>
+    <string name="group_data_freshness">তথ্যের সতেজতা</string>
+
+    <!-- Search -->
+    <string name="search_title">পণ্য খুঁজুন</string>
+    <string name="search_hint">পণ্যের নাম বা ব্র্যান্ড</string>
+    <string name="search_action">খুঁজুন</string>
+    <string name="search_rate_note">শুধু ‘খুঁজুন’ চাপলে সার্চ হয়: পাবলিক ডেটাবেসে মিনিটে ১০টি সার্চের সীমা আছে।</string>
+    <string name="search_idle_title">নাম দিয়ে পণ্য খুঁজুন</string>
+    <string name="search_idle_body">পণ্যের নাম বা ব্র্যান্ড দিয়ে Open Food Facts-এ খুঁজুন, তারপর ফলাফল খুলে পূর্ণ তথ্য দেখুন।</string>
+    <string name="search_empty_title">কিছু পাওয়া যায়নি</string>
+    <string name="search_empty_body">এই নামে কিছু মেলেনি। ছোট বা ভিন্ন বানানে আবার চেষ্টা করুন।</string>
+    <string name="search_result_count">%1$dটি পণ্য পাওয়া গেছে</string>
+
+    <!-- Manual product entry -->
+    <string name="manual_title">পণ্যের তথ্য যোগ করুন</string>
+    <string name="manual_intro">কোনো ডেটাবেসে এই বারকোড নেই। প্যাকেটে যা লেখা আছে তা লিখে রাখতে পারেন; এটি এই ডিভাইসেই থাকবে এবং পরে পাওয়া তথ্যের পাশে দেখানো হবে।</string>
+    <string name="manual_photo_title">প্যাকেটের ছবি</string>
+    <string name="manual_photo_hint">লেবেলের ছবি তুলুন যাতে পরে মান যাচাই করতে পারেন। ছবি এই ডিভাইসেই থাকে।</string>
+    <string name="manual_take_photo">ছবি তুলুন</string>
+    <string name="manual_photo_error">ক্যামেরা খোলা যায়নি। আপনি লেবেল থেকে মান টাইপ করতে পারেন।</string>
+    <string name="manual_retake_photo">আবার ছবি তুলুন</string>
+    <string name="manual_remove_photo">মুছুন</string>
+    <string name="manual_read_from_label">মানগুলো প্যাকেটের লেবেল থেকে নেওয়া</string>
+    <string name="manual_read_from_label_hint">মনে থেকে লিখলে এটি বন্ধ করুন।</string>
+    <string name="manual_name">পণ্যের নাম</string>
+    <string name="manual_brand">ব্র্যান্ড</string>
+    <string name="manual_quantity">নেট পরিমাণ (যেমন ৪০০ গ্রাম)</string>
+    <string name="manual_serving_size">পরিবেশন আকার (যেমন ৩০ গ্রাম)</string>
+    <string name="manual_ingredients">উপাদান</string>
+    <string name="manual_allergens">অ্যালার্জেন</string>
+    <string name="manual_allergens_hint">কমা দিয়ে আলাদা করুন</string>
+    <string name="manual_nutrition_title">প্রতি ১০০ গ্রামে পুষ্টিমান</string>
+    <string name="manual_error_empty">সংরক্ষণের আগে অন্তত একটি মান লিখুন।</string>
+    <string name="manual_error_invalid_number">পুষ্টিমানের মান সংখ্যা হতে হবে, অথবা খালি রাখতে হবে।</string>
+    <string name="manual_error_save">তথ্য এই ডিভাইসে সংরক্ষণ করা যায়নি।</string>
+    <string name="manual_save">এই ডিভাইসে সংরক্ষণ করুন</string>
+    <string name="manual_delete">আমার তথ্য মুছুন</string>
+    <string name="manual_privacy_note">আপনি যা লেখেন তা কোথাও পাঠানো হয় না। NutriScan পাবলিক ডেটাবেসে কিছু প্রকাশ করে না।</string>
+
     <!-- Errors -->
     <string name="loading">লোড হচ্ছে…</string>
     <string name="error_not_found_title">পণ্যটি পাওয়া যায়নি</string>
-    <string name="error_not_found_body">বারকোড %1$s এখনও Open Food Facts ডেটাবেসে নেই। অন্য পণ্য স্ক্যান করে দেখুন।</string>
+    <string name="error_not_found_body">বারকোড %1$s কোনো Open Food Facts ডেটাবেসে নেই। প্যাকেটের তথ্য যোগ করতে পারেন, অথবা নাম দিয়ে খুঁজতে পারেন।</string>
     <string name="error_offline_title">ইন্টারনেট সংযোগ নেই</string>
     <string name="error_offline_body">সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।</string>
     <string name="error_timeout_title">সময় শেষ হয়েছে</string>
     <string name="error_timeout_body">Open Food Facts সময়মতো উত্তর দেয়নি। আবার চেষ্টা করুন।</string>
     <string name="error_rate_limited_title">অনুরোধ বেশি হয়ে গেছে</string>
     <string name="error_rate_limited_body">Open Food Facts এখন অনুরোধ সীমিত করছে। কিছুক্ষণ অপেক্ষা করে আবার চেষ্টা করুন।</string>
-    <string name="error_server_title">সার্ভার ত্রুটি</string>
+    <string name="error_server_title">সেবা সাময়িকভাবে বন্ধ</string>
     <string name="error_server_body">Open Food Facts একটি ত্রুটি দিয়েছে (HTTP %1$d)। পরে আবার চেষ্টা করুন।</string>
     <string name="error_malformed_title">অপ্রত্যাশিত উত্তর</string>
     <string name="error_malformed_body">পণ্যের তথ্য পড়া যায়নি। পরে আবার চেষ্টা করুন।</string>
     <string name="error_unknown_title">কিছু একটা ভুল হয়েছে</string>
     <string name="error_unknown_body">পণ্যটি লোড করা যায়নি। আবার চেষ্টা করুন।</string>
+    <string name="error_invalid_barcode_title">এটি পণ্যের বারকোড নয়</string>
+    <string name="error_barcode_empty">একটি বারকোড লিখুন।</string>
+    <string name="error_barcode_non_numeric">পণ্যের বারকোডে শুধু সংখ্যা থাকে। QR কোড বা অন্য কোড সমর্থিত নয়।</string>
+    <string name="error_barcode_too_short">বারকোডটি খুব ছোট। EAN-8, UPC-A, UPC-E ও EAN-13 কোডে ৮, ১২ বা ১৩ সংখ্যা থাকে।</string>
+    <string name="error_barcode_too_long">বারকোডটি খুব বড়। NutriScan সর্বোচ্চ ১৪ সংখ্যার কোড পড়ে।</string>
+    <string name="error_barcode_unsupported_length">NutriScan ৮, ১২, ১৩ ও ১৪ সংখ্যার বারকোড সমর্থন করে। এটির দৈর্ঘ্য ভিন্ন।</string>
+    <string name="error_barcode_bad_check_digit">চেক ডিজিট মিলছে না, তাই এটি সম্ভবত ভুল পড়া বা টাইপো।</string>
 
     <!-- Content descriptions -->
     <string name="cd_app_logo">NutriScan লোগো</string>

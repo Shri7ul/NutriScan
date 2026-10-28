@@ -1,0 +1,15 @@
+{
+  "code": "012345000065",
+  "status": "success",
+  "errors": [],
+  "product": {
+    "_id": "012345000065",
+    "product_type": "beauty",
+    "product_name": "Example Conditioner",
+    "brands": "Example Beauty",
+    "nutriscore_grade": "unknown",
+    "nutrition_grades": "unknown",
+    "last_modified_t": 1750000000,
+    "states_tags": ["en:to-be-completed"]
+  }
+}

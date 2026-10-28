@@ -1,0 +1,20 @@
+{
+  "code": "012345000065",
+  "status": "success",
+  "errors": [],
+  "product": {
+    "_id": "012345000065",
+    "product_type": "food",
+    "product_name": "Plain Rice Cakes",
+    "nutrition_data_per": "100g",
+    "last_modified_t": 1750000000,
+    "states_tags": ["en:nutrition-facts-completed"],
+    "nutriments": {
+      "energy-kj_100g": 1600,
+      "fat_100g": 2.4,
+      "carbohydrates_100g": 81,
+      "proteins_100g": 8.2,
+      "sodium_100g": 0.4
+    }
+  }
+}

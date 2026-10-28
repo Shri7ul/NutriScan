@@ -1,0 +1,15 @@
+{
+  "code": "012345000065",
+  "status": "failure",
+  "errors": [
+    {
+      "field": { "id": "product_type", "value": "beauty" },
+      "impact": { "id": "failure", "name": "Failure" },
+      "message": {
+        "id": "product_found_with_a_different_product_type",
+        "name": "Product found with a different product type"
+      }
+    }
+  ],
+  "result": { "id": "product_found_with_a_different_product_type" }
+}

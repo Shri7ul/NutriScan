@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Package photos taken during manual product entry. -->
+    <files-path
+        name="package_photos"
+        path="package_photos/" />
+</paths>

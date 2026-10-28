@@ -23,13 +23,17 @@ import com.nutriscan.app.util.BarcodeValidator
 
 private const val MAX_BARCODE_LENGTH = 14
 
+/**
+ * Manual entry validates the same way the scanner does: a code must be 8-14 digits with a correct
+ * check digit for its length, so a typo is reported instead of being looked up.
+ */
 @Composable
 fun ManualBarcodeDialog(
     onDismiss: () -> Unit,
     onConfirm: (String) -> Unit
 ) {
     var value by rememberSaveable { mutableStateOf("") }
-    var showError by rememberSaveable { mutableStateOf(false) }
+    var rejection by rememberSaveable { mutableStateOf<BarcodeValidator.Rejection?>(null) }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -39,18 +43,19 @@ fun ManualBarcodeDialog(
                 OutlinedTextField(
                     value = value,
                     onValueChange = { input ->
-                        value = input.filter { it.isDigit() }.take(MAX_BARCODE_LENGTH)
-                        showError = false
+                        value = input.filter { it.isDigit() || it == ' ' || it == '-' }.take(MAX_BARCODE_LENGTH)
+                        rejection = null
                     },
                     label = { Text(stringResource(R.string.manual_entry_hint)) },
                     singleLine = true,
-                    isError = showError,
+                    isError = rejection != null,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     modifier = Modifier.fillMaxWidth()
                 )
-                if (showError) {
+                val current = rejection
+                if (current != null) {
                     Text(
-                        text = stringResource(R.string.manual_entry_invalid),
+                        text = barcodeRejectionMessage(current),
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier.padding(top = 8.dp)
@@ -61,11 +66,11 @@ fun ManualBarcodeDialog(
         confirmButton = {
             TextButton(
                 onClick = {
-                    val normalized = BarcodeValidator.normalize(value)
-                    if (BarcodeValidator.isValid(normalized)) {
-                        onConfirm(normalized)
-                    } else {
-                        showError = true
+                    when (val result = BarcodeValidator.inspect(value)) {
+                        BarcodeValidator.Rejection.OK ->
+                            BarcodeValidator.sanitize(value)?.let(onConfirm)
+
+                        else -> rejection = result
                     }
                 }
             ) {

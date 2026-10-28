@@ -12,16 +12,17 @@ import java.util.concurrent.TimeUnit
 object NetworkModule {
 
     const val BASE_URL = "https://world.openfoodfacts.org/"
+    const val SEARCH_BASE_URL = "https://search.openfoodfacts.org/"
 
     /**
      * Open Food Facts asks every client to identify itself; anonymous traffic is treated as a bot
      * and rate limited harder. No API key is required for read access.
      */
-    const val USER_AGENT = "NutriScan/1.0 (Android; com.nutriscan.app)"
+    const val USER_AGENT = "NutriScan/2.0 (Android; com.nutriscan.app)"
 
-    private const val CONNECT_TIMEOUT_SECONDS = 15L
-    private const val READ_TIMEOUT_SECONDS = 20L
-    private const val CALL_TIMEOUT_SECONDS = 30L
+    private const val CONNECT_TIMEOUT_SECONDS = 8L
+    private const val READ_TIMEOUT_SECONDS = 12L
+    private const val CALL_TIMEOUT_SECONDS = 15L
 
     fun createGson(): Gson = GsonBuilder()
         .registerTypeAdapterFactory(FlexibleDoubleAdapterFactory)
@@ -34,18 +35,28 @@ object NetworkModule {
         .connectTimeout(CONNECT_TIMEOUT_SECONDS, TimeUnit.SECONDS)
         .readTimeout(READ_TIMEOUT_SECONDS, TimeUnit.SECONDS)
         .callTimeout(CALL_TIMEOUT_SECONDS, TimeUnit.SECONDS)
+        // Redirects are expected: `product_type=all` answers 302 to the family host that owns
+        // the barcode (openbeautyfacts.org, openpetfoodfacts.org, ...).
+        .followRedirects(true)
+        .followSslRedirects(true)
         .retryOnConnectionFailure(true)
         .addInterceptor(ClientHeaderInterceptor())
 
     fun createApi(
         client: OkHttpClient = createOkHttpClient(),
         baseUrl: String = BASE_URL
-    ): OffApi = Retrofit.Builder()
+    ): OffApi = retrofit(baseUrl, client).create(OffApi::class.java)
+
+    fun createSearchApi(
+        client: OkHttpClient = createOkHttpClient(),
+        baseUrl: String = SEARCH_BASE_URL
+    ): SearchApi = retrofit(baseUrl, client).create(SearchApi::class.java)
+
+    private fun retrofit(baseUrl: String, client: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .client(client)
         .addConverterFactory(GsonConverterFactory.create(createGson()))
         .build()
-        .create(OffApi::class.java)
 
     private class ClientHeaderInterceptor : Interceptor {
         override fun intercept(chain: Interceptor.Chain): Response {

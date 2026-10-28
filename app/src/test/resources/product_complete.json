@@ -1,0 +1,50 @@
+{
+  "code": "012345000065",
+  "status": "success",
+  "errors": [],
+  "product": {
+    "_id": "012345000065",
+    "product_type": "food",
+    "product_name": "Sunrise Oat Biscuits",
+    "product_name_en": "Sunrise Oat Biscuits",
+    "generic_name": "Oat biscuits",
+    "brands": "Sunrise Foods, Example Mills",
+    "categories_tags": ["en:snacks", "en:biscuits"],
+    "labels_tags": ["en:vegetarian"],
+    "quantity": "250 g",
+    "product_quantity": 250,
+    "serving_size": "2 biscuits (25 g)",
+    "serving_quantity": 25,
+    "ingredients_text_en": "Wholegrain oats, sugar, palm oil, salt",
+    "ingredients_n": 4,
+    "ingredients": [
+      { "id": "en:oat", "text": "Wholegrain oats" },
+      { "id": "en:sugar", "text": "Sugar" }
+    ],
+    "allergens": "gluten",
+    "allergens_tags": ["en:gluten"],
+    "traces": "",
+    "traces_tags": ["en:milk"],
+    "image_front_url": "https://example.invalid/images/front.jpg",
+    "image_url": "https://example.invalid/images/general.jpg",
+    "nutrition_data_per": "100g",
+    "nutriscore_grade": "c",
+    "nutriscore_score": 12,
+    "nova_group": 3,
+    "completeness": 0.85,
+    "last_modified_t": 1750000000,
+    "states_tags": ["en:nutrition-facts-completed", "en:ingredients-completed"],
+    "nutriments": {
+      "energy-kcal_100g": 450,
+      "energy-kj_100g": 1883,
+      "fat_100g": 18.5,
+      "saturated-fat_100g": 8.2,
+      "carbohydrates_100g": 62,
+      "sugars_100g": "21.4",
+      "added-sugars_100g": 18,
+      "proteins_100g": 7.1,
+      "salt_100g": 0.8,
+      "fiber_100g": 6.4
+    }
+  }
+}

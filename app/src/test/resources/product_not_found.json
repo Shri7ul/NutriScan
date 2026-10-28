@@ -1,0 +1,12 @@
+{
+  "code": "012345000065",
+  "status": "failure",
+  "errors": [
+    {
+      "field": { "id": "code", "value": "012345000065" },
+      "impact": { "id": "failure", "name": "Failure" },
+      "message": { "id": "product_not_found", "name": "Product not found" }
+    }
+  ],
+  "result": { "id": "product_not_found", "name": "Product not found" }
+}

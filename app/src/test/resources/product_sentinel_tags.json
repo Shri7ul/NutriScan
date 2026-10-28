@@ -1,0 +1,22 @@
+{
+  "code": "012345000065",
+  "status": "success",
+  "product": {
+    "code": "012345000065",
+    "product_name": "Example Multipack",
+    "brands": "Example Foods",
+    "product_type": "food",
+    "categories": "null",
+    "categories_tags": ["en:null"],
+    "labels_tags": ["en:null", "en:vegetarian"],
+    "allergens_tags": ["en:milk"],
+    "traces": "",
+    "traces_tags": [],
+    "nutrition_data_per": "100g",
+    "nutriments": {
+      "energy-kcal_100g": 500,
+      "fat_100g": 25
+    },
+    "completeness": 0.5
+  }
+}

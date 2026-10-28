@@ -57,6 +57,7 @@ import com.nutriscan.app.util.AppLanguage
 @Composable
 fun HomeScreen(
     onScanClick: () -> Unit,
+    onSearchClick: () -> Unit,
     onBarcodeEntered: (String) -> Unit,
     onOpenRecent: (String) -> Unit
 ) {
@@ -145,6 +146,15 @@ fun HomeScreen(
                     shape = RoundedCornerShape(16.dp)
                 ) {
                     Text(stringResource(R.string.action_enter_barcode))
+                }
+            }
+
+            item {
+                TextButton(
+                    onClick = onSearchClick,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(stringResource(R.string.action_search_product))
                 }
             }
 
